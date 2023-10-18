@@ -1,0 +1,39 @@
+body{
+	background-image: url(../images/background.jpg);
+	background-size: cover;
+}
+h1{
+	color: aliceblue;
+	text-align: center;
+}
+.title{
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 5px;
+}
+.details{
+	display: flex;
+	height: 50%;
+}
+.img {
+	width: 50%;
+	padding: 15px;
+}
+.img img{
+	width: 100%;
+	
+	object-fit: cover;
+	
+}
+.description{
+	width: 50%;
+	font-size: 15pt;
+	padding: 25px;
+}
+.item{
+	margin: 10px;
+	background-color: white;
+	border: solid black;
+}

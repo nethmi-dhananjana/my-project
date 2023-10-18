@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <script>
+
+
+    </script>
+    <style>
+
+        body {
+            /*background: url(images/1.jpg) no-repeat center center fixed;*/
+            /*background-image: url(images/1.jpg);*/
+            /*background-size: cover;*/
+            /*background-color: #6ed9d9;*/
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            transition-delay: 50s;
+        }
+
+        .image-container {
+            display: inline-block;
+            margin: 5px;
+            transition-delay: 3s;
+        }
+
+        .image-container img {
+            width: 350px;
+            height: auto;
+        }
+
+        .text {
+            filter: blur(10px);
+            opacity: 0;
+            top: 30%;
+            left: 100%;
+            visibility: hidden;
+            position: fixed;
+            width: 75%;
+            height: fit-content;
+            color: #fefefe;
+            padding: 10px;
+            box-sizing: border-box;
+
+        }
+
+        /*.text p, .text h3, .text img {
+            background-color: white;
+        }*/
+
+        .text img {
+            width: 50%;
+            padding-right: 10px;
+            float: left;
+        }
+
+        .image-container:hover .text {
+            filter: blur(0px);
+            visibility: visible;
+            right: 50%;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -25%);
+            opacity: 1;
+            transition: 1s ease-in-out;
+            z-index: 9999;
+            position: fixed;
+            background-color: rgba(207, 105, 0, 0.75);
+            /*border: 5px solid green;*/
+            /*box-shadow: 0px 0px 10px 6px #25D793FF;*/
+            border: 5px double #ffffff;
+        }
+
+        .image-container:hover .thumb {
+            transition: 2s ease-in-out;
+            filter: blur(5px);
+        }
+
+        .font-color-btns {
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+            top: 0;
+            right: 0;
+            position: fixed;
+        }
+
+        button {
+            width: 20px;
+            height: 20px;
+            margin: 2px;
+            border: none;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .bluwish {
+            background-color: #31b0b1;
+        }
+
+        input[type=color] {
+            width: 20px;
+            height: 20px;
+            margin: 2px;
+            border: none;
+        }
+
+        .font-size-btns {
+            padding-right: 15px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .small {
+            font-size: small;
+        }
+
+        .medium {
+            font-size: medium;
+        }
+
+        .large {
+            font-size: large;
+        }
+
+        .footer {
+            /*position: fixed;*/
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            /*background-color: rgba(207, 105, 0, 0.75);*/
+            /*background-color: #25D793FF;*/
+            /*background-color: rgba(79, 49, 48, 0.95);*/
+            color: white;
+            text-align: center;
+        }
+        a {
+            color: white;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        p {
+            color: white;
+        }
+
+
+
+       
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px #000000;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(207, 105, 0, 0.75);
+        }
+
+    </style>
+    <link rel="stylesheet" href="../Student2/css/navbar.css">
+</head>
+<body style="background: url(images/1.jpg) no-repeat center center fixed; background-size: cover">
+<div class="nav">
+    <div class="product">
+        <img src="images/console.png" alt="">
+
+        <h1> GAMES HUB </h1>
+    </div>
+    <div class="items" style="padding-top: 10px;">
+        <ul>
+            <li> <a href="../student2/home.html"> Home </a> </li>
+            <li> <a href ='../student2/comments.html'> Comments</a></li>
+            <li><a href='../Student 1/BuyProducts.html'> Shop</a></li>
+            <li><a href='../Student3/abt.html' > Student Details</a></li>
+            <li><a href='../Student3/quiz.html' > Quiz</a></li>
+            <li><a href='../Student4/Sitemap.html' > Sitemap</a></li>
+            <li><a href='../Student4/gallery.html' class="active"> Gallery</a></li>
+        </ul>
+    </div>
+</div>
+<div class="font-color-btns">
+    <div class="font-size-btns">
+        <button class="small" onclick="document.body.style.fontSize = 'small'">A
+        </button>
+
+        <button class="medium" onclick="document.body.style.fontSize = 'medium'">A
+        </button>
+
+        <button class="large" onclick="document.body.style.fontSize = 'large'">A
+        </button>
+    </div>
+
+    <div class="color-scheme-btns">
+        <button class="red" onclick="document.body.style.background = 'red'">
+        </button>
+        <br>
+
+        <button class="green" onclick="function changeBackgroundColor(color) {
+        document.body.style.background = color;
+    }
+    changeBackgroundColor('green')">
+        </button>
+        <br>
+
+        <button class="bluwish" onclick="document.body.style.background = '#31b0b1'">
+        </button>
+        <br>
+
+        <input type="color" id="randomColor" name="randomColor" value="rColor"
+               oninput="changeBackgroundColor(document.getElementById('randomColor').value)"><br>
+
+        <script>
+            function changeBackgroundColor(color) {
+                document.body.style.background = color;
+            }
+        </script>
+    </div>
+
+</div>
+
+
+<h1>Gallery</h1>
+<p>Here are some pictures of Games</p>
+
+<div class="gallery-container">
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(1).jpeg" alt="image belongs here. error 404!">
+        <div class="text">
+            <img src="images/download%20(1).jpeg" alt="">
+            <h3>Assassins Creed</h3>
+            <p>Assassin's Creed is a popular action-adventure video game series developed and published by Ubisoft. The
+                series has been ongoing since 2007 and has seen multiple sequels, spin-offs, and adaptations over the
+                years.<br><br>
+
+                The games typically follow a protagonist who is an assassin fighting against a Templar Order or similar
+                organization, often set in various historical periods and locations, such as ancient Egypt, medieval
+                Europe, and the American Revolution. Players are able to explore large open worlds, engage in
+                stealth-based combat, and complete various missions and objectives.<br><br>
+
+                The Assassin's Creed series is known for its blend of historical fiction and science fiction, as well as
+                its focus on parkour-style movement and free-running mechanics. The series has also been adapted into a
+                movie, comics, and novels.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(2).jpeg" alt="">
+        <div class="text">
+            <img src="images/download%20(2).jpeg" alt="">
+            <h3>Far Cry</h3>
+            <p>Far Cry is a popular first-person shooter video game series developed and published by Ubisoft. The
+                series has been ongoing since 2004 and has seen multiple sequels, spin-offs, and adaptations over the
+                years.<br><br>
+
+                The games typically follow a protagonist who finds themselves stranded in a hostile environment, such as
+                a tropical island or a war-torn country, and must fight against various enemies and wildlife in order to
+                survive and escape. Players are able to explore large open worlds, engage in gunplay and stealth-based
+                combat, and complete various missions and objectives.<br><br>
+
+                The Far Cry series is known for its immersive and detailed environments, as well as its focus on freedom
+                of choice and multiple paths to complete objectives. The series has also featured a wide variety of
+                vehicles, weapons, and animals that players can utilize during gameplay.<br><br>
+
+                In addition to the main series, Far Cry has also spawned several spin-off games and expansions,
+                including Far Cry Primal, Far Cry New Dawn, and Far Cry 3: Blood Dragon.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(3).jpeg" alt="">
+        <div class="text">
+            <img src="images/download%20(3).jpeg" alt="">
+            <h3>Crysis</h3>
+            <p>Crysis is a first-person shooter video game series developed by Crytek and published by Electronic Arts.
+                The series debuted in 2007 and has since seen multiple sequels and spin-offs.<br><br>
+
+                The games in the Crysis series are known for their advanced graphics and gameplay mechanics,
+                particularly in terms of the use of nanosuits that provide the player character with various abilities
+                such as increased strength, speed, and cloaking. The games are set in various locations, such as a
+                tropical island and a city under alien attack, and typically involve the player fighting against both
+                human and alien enemies.<br><br>
+
+                Crysis also features open-world gameplay elements, allowing players to explore and complete objectives
+                in non-linear ways. The series has been praised for its graphics, physics, and sound design, as well as
+                its challenging gameplay and advanced AI.<br><br>
+
+                In addition to the main series, Crysis has also spawned a number of spin-offs, including Crysis Warhead,
+                Crysis 2, and Crysis 3.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(4).jpeg" alt="">
+        <div class="text">
+            <img src="images/download%20(4).jpeg" alt="">
+            <h3>Forza Horizon</h3>
+            <p>Forza Horizon is an open-world racing video game series developed by Playground Games and published by
+                Microsoft Studios. The first game in the series was released in 2012, and there have been several
+                sequels and spin-offs since then.<br><br>
+
+                The Forza Horizon series is known for its open-world environments that players can explore freely while
+                participating in various racing events and challenges. The games feature a wide variety of cars and
+                customizations, as well as a dynamic weather system and day/night cycle.<br><br>
+
+                The gameplay in Forza Horizon involves competing in races and events to earn points and progress through
+                the game's story, which typically involves the player character working their way up the ranks of a
+                racing festival. The games also feature online multiplayer modes, allowing players to race against each
+                other in a variety of modes and events.<br><br>
+
+                The Forza Horizon series has been praised for its graphics, sound design, and immersive gameplay, as
+                well as its expansive open-world environments and large selection of cars. The most recent game in the
+                series is Forza Horizon 5, which was released in November 2021.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(5).jpeg" alt="">
+        <div class="text">
+            <img src="images/download%20(5).jpeg" alt="">
+            <h3>GTA</h3>
+            <p>Grand Theft Auto, commonly known as GTA, is a popular video game series developed by Rockstar North and
+                published by Rockstar Games. The series has been ongoing since 1997 and has seen multiple sequels,
+                spin-offs, and adaptations over the years.<br><br>
+
+                The games in the GTA series are open-world action-adventure games that allow players to explore large,
+                detailed environments and engage in a variety of activities, such as driving vehicles, completing
+                missions, and engaging in combat. The games are set in various fictional locations, such as Liberty
+                City, Vice City, and San Andreas, and often involve the player character rising through the ranks of a
+                criminal underworld.<br><br>
+
+                The GTA series is known for its mature themes and controversial content, including violence, drug use,
+                and sex. The games also feature a large cast of colorful characters and a variety of side activities and
+                mini-games, such as playing pool, going to the gym, and participating in street races.<br><br>
+
+                In addition to the main series, GTA has also spawned several spin-off games and expansions, including
+                Grand Theft Auto: Vice City Stories, Grand Theft Auto: Chinatown Wars, and Grand Theft Auto Online, a
+                multiplayer mode that allows players to compete and cooperate in various activities and missions.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(6).jpeg" alt="">
+        <div class="text">
+            <img src="images/download%20(6).jpeg" alt="">
+            <h3>Cyberpunk 2077</h3>
+            <p>Cyberpunk 2077 is a first-person open-world action role-playing video game developed and published by CD
+                Projekt Red. The game was released in December 2020 for Microsoft Windows, PlayStation 4, PlayStation 5,
+                Xbox One, Xbox Series X/S, and Google Stadia.<br><br>
+
+                The game is set in a dystopian future in the year 2077, in the city of Night City, which is located in
+                the Free State of California. Players take on the role of V, a mercenary who can be customized to have
+                different skills, abilities, and cybernetic enhancements. The game features a branching storyline with
+                multiple endings, which is affected by the player's choices and actions throughout the game.<br><br>
+
+                Cyberpunk 2077 features an expansive open-world environment with a variety of activities and missions to
+                complete, such as side quests, combat, hacking, and exploration. The game also includes a large cast of
+                characters, including non-playable characters with unique personalities and storylines.<br><br>
+
+                Upon release, Cyberpunk 2077 was criticized for technical issues, bugs, and performance problems on
+                older consoles. However, the game has received praise for its story, characters, world-building, and
+                customization options. The game has since received several patches and updates to address some of these
+                issues.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(7).jpeg" alt="">
+        <div class="text">
+            <img src="images/download%20(7).jpeg" alt="">
+            <h3>Battlefield</h3>
+            <p>Battlefield is a popular first-person shooter video game series developed by EA DICE and published by
+                Electronic Arts. The series debuted in 2002 and has since seen multiple sequels and spin-offs.<br><br>
+
+                The games in the Battlefield series typically involve large-scale battles between opposing teams of
+                players, with various objectives such as capturing control points or destroying enemy assets. The series
+                is known for its emphasis on team play and strategic gameplay, as well as its realistic depictions of
+                military combat.<br><br>
+
+                The games in the series feature a variety of settings, including various historical periods such as
+                World War I and II, as well as modern and futuristic settings. The games typically feature a variety of
+                vehicles that players can use in combat, such as tanks, helicopters, and planes.<br><br>
+
+                In addition to the main series, Battlefield has also spawned several spin-off games and expansions,
+                including Battlefield 2142, Battlefield Hardline, and Battlefield: Bad Company. The most recent game in
+                the series is Battlefield 2042, which was released in November 2021.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(8).jpeg" alt="">
+        <div class="text">
+            <img src="images/download%20(8).jpeg" alt="">
+            <h3>Witcher</h3>
+            <p>The Witcher is a popular action role-playing video game series developed by CD Projekt Red. The series is
+                based on the book series of the same name by Polish author Andrzej Sapkowski.<br><br>
+
+                The games in the Witcher series follow the story of Geralt of Rivia, a monster hunter known as a
+                Witcher, who is on a quest to find his adopted daughter, Ciri. The games take place in a fantasy world
+                filled with magic, monsters, and political intrigue.<br><br>
+
+                The gameplay in the Witcher series involves exploring a large open world, completing quests, and
+                engaging in combat with various enemies. The games also feature a complex narrative with multiple
+                endings, which is affected by the player's choices and actions throughout the game.<br>
+
+                The Witcher series is known for its immersive storytelling, deep character development, and morally gray
+                choices. The games also feature a variety of customization options, such as upgrading weapons and armor,
+                and a complex crafting system.<br><br>
+
+                In addition to the main series, The Witcher has also spawned several spin-offs and adaptations,
+                including a television series on Netflix. The most recent game in the series is The Witcher 3: Wild
+                Hunt, which was released in 2015 and is widely regarded as one of the greatest video games of all time.
+
+
+            </p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(9).jpeg" alt="">
+        <div class="text">
+            <img src="images/download%20(9).jpeg" alt="">
+            <h3>Star Wars</h3>
+            <p>There are many Star Wars video games that have been released over the years, spanning various genres and
+                platforms. Some of the most popular Star Wars games include:<br><br>
+
+                Star Wars Jedi: Fallen Order: An action-adventure game released in 2019, where players take on the role
+                of a Jedi Padawan named Cal Kestis as he tries to survive in the aftermath of the Jedi Order's
+                destruction.<br><br>
+
+                Star Wars Battlefront II: A first-person shooter game released in 2017, which allows players to
+                participate in large-scale battles set in various locations from the Star Wars universe.<br><br>
+
+                Knights of the Old Republic: An RPG game released in 2003, set thousands of years before the events of
+                the Star Wars films, where players can create their own character and become a Jedi or a Sith.<br><br>
+
+                Star Wars: The Old Republic: An MMORPG game released in 2011, which is set in the same time period as
+                Knights of the Old Republic and allows players to create their own character and explore the Star Wars
+                universe.<br><br>
+
+                Star Wars: X-Wing: A space flight simulator game released in 1993, where players take control of various
+                Star Wars spacecraft and engage in space combat.<br><br>
+
+                These are just a few examples of the many Star Wars games that have been released over the years, each
+                offering their own unique gameplay experiences set within the beloved Star Wars universe.
+
+            </p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(10).jpeg" alt="">
+        <div class="text">
+            <img src="images/download%20(10).jpeg" alt="">
+            <h3>PUBG</h3>
+            <p>PUBG (PlayerUnknown's Battlegrounds) is a popular online multiplayer battle royale game developed and
+                published by PUBG Corporation, a subsidiary of South Korean video game company Bluehole. The game was
+                first released for Microsoft Windows in 2017, and has since been ported to various other platforms,
+                including Xbox One, PlayStation 4, and mobile devices.<br><br>
+
+                In PUBG, up to 100 players parachute onto an island and scavenge for weapons and equipment to kill other
+                players while avoiding being killed themselves. The playable area of the island gradually shrinks over
+                time, forcing players to move closer together and increasing the likelihood of encounters. The last
+                player or team standing wins the game.<br><br>
+
+                PUBG is known for its intense gameplay, realistic graphics, and tactical gameplay. The game features a
+                variety of weapons and vehicles that players can use to gain an advantage over their opponents. It also
+                includes a variety of maps with different terrain and environmental features, which can affect gameplay
+                strategies.<br><br>
+
+                PUBG has become a cultural phenomenon, with millions of players around the world competing in online
+                matches and various esports tournaments. It has also inspired other popular battle royale games, such as
+                Fortnite and Apex Legends.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(11).jpg" alt="">
+        <div class="text">
+            <img src="images/download%20(11).jpg" alt="">
+            <h3>Call of Duty</h3>
+            <p>Call of Duty is a popular first-person shooter video game series developed by multiple studios, including
+                Infinity Ward, Treyarch, and Sledgehammer Games, and published by Activision. The series debuted in 2003
+                and has since seen multiple sequels and spin-offs.<br><br>
+
+                The games in the Call of Duty series typically involve a combination of single-player campaigns and
+                multiplayer modes. The single-player campaigns usually feature a cinematic story, often set in
+                historical or modern military conflicts, and featuring a range of characters and missions. The
+                multiplayer modes typically involve competitive matches between teams of players, with various
+                objectives and game modes.<br><br>
+
+                The games in the series feature a variety of settings, including various historical periods such as
+                World War II, the Cold War, and modern and future warfare. The games typically feature a variety of
+                weapons that players can use in combat, as well as various vehicles and equipment.<br><br>
+
+                In addition to the main series, Call of Duty has also spawned several spin-off games and expansions,
+                including Call of Duty: Black Ops, Call of Duty: Modern Warfare, and Call of Duty: Warzone. The most
+                recent game in the series is Call of Duty: Vanguard, which was released in November 2021.
+
+
+            </p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="thumb" src="images/download%20(12).jpg" alt="">
+        <div class="text">
+            <img src="images/download%20(12).jpg" alt="">
+            <h3>Spiderman</h3>
+            <p>Spider-Man is a popular superhero character in comic books, movies, and video games. There have been
+                several video games based on Spider-Man, developed by various studios and published by multiple
+                companies over the years.<br><br>
+
+                The most recent Spider-Man game is Marvel's Spider-Man: Miles Morales, developed by Insomniac Games and
+                published by Sony Interactive Entertainment. The game was released in 2020 and is a spin-off of the 2018
+                game, Marvel's Spider-Man.<br><br>
+
+                In Marvel's Spider-Man: Miles Morales, players take control of Miles Morales, a teenage Spider-Man with
+                unique abilities, as he tries to defend New York City from various threats. The game features an
+                open-world design, allowing players to freely explore the city and complete various missions and side
+                quests.<br><br>
+
+                The game's combat system is similar to the previous game, with players using a combination of melee
+                attacks and web-slinging to take down enemies. The game also includes various upgrades and customization
+                options, allowing players to tailor their play style to their liking.<br><br>
+
+                Other notable Spider-Man games include Spider-Man 2, released in 2004, which is widely regarded as one
+                of the best superhero games ever made, and Spider-Man: Into the Spider-Verse - The Video Game, based on
+                the hit animated movie, which was released in 2018.</p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>
+        <a href="YehenPageEditor.html" target="_blank">Page Editor</a>
+    </p>
+</div>
+</body>
+</html>

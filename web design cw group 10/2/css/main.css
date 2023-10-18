@@ -1,0 +1,35 @@
+body {
+	background: url('../images/background.jpg') no-repeat center center fixed;
+	background-size: cover;
+}
+.title{
+	position: absolute;
+    bottom: 16px;
+    text-align: center;
+    width: 90%;
+    padding: 1em;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bolder;	
+}
+.main-container{
+	position: relative;
+}
+.darken-image{
+	filter: brightness(50%)	;
+}
+.main {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+}
+.image-content {
+	display: inline-block;
+	margin: 5px;
+	object-fit: cover;
+}
+.image-content img {
+	width: 600px;
+	height: 350px;
+}

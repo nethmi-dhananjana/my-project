@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxgui.Main">
+    <children>
+        <BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #192;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <tabs>
+                        <Tab text="View All Queue">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="354.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                    <children>
+                                                        <Label text="Cashier 1">
+                                                            <font>
+                                                                <Font name="Arial" size="21.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="queue1">
+                                                            <font>
+                                                                <Font size="25.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="queue2">
+                                                            <font>
+                                                                <Font size="25.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </VBox>
+                                                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                    <children>
+                                                        <Label text="Cashier 2" textAlignment="CENTER">
+                                                            <font>
+                                                                <Font name="Arial" size="21.0" />
+                                                            </font></Label>
+                                                        <Label fx:id="queue3">
+                                                            <font>
+                                                                <Font size="25.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="queue4">
+                                                            <font>
+                                                                <Font size="25.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="queue5">
+                                                            <font>
+                                                                <Font size="25.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </VBox>
+                                                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                    <children>
+                                                        <Label text="Cashier 3" textAlignment="CENTER">
+                                                            <font>
+                                                                <Font name="Arial" size="21.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="queue6">
+                                                            <font>
+                                                                <Font size="24.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="queue7">
+                                                            <font>
+                                                                <Font size="24.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="queue8">
+                                                            <font>
+                                                                <Font size="25.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="queue9">
+                                                            <font>
+                                                                <Font size="25.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="queue10">
+                                                            <font>
+                                                                <Font size="24.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Customer Details">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <AnchorPane prefHeight="434.0" prefWidth="580.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <TableView fx:id="customerDetails" prefHeight="178.0" prefWidth="580.0" style="-fx-background-color: yellow;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="queueNumberColumn" prefWidth="192.0" text="QUEUE NUMBER" />
+                                                        <TableColumn fx:id="firstNameColumn1" prefWidth="181.0" text="FIRST NAME" />
+                                                        <TableColumn fx:id="secondNameColumn1" minWidth="8.0" prefWidth="226.0" text="SECOND NAME" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </AnchorPane>
+                                    </children></AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Customer Details Waiting">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="customerDetailsWaiting" prefHeight="434.0" prefWidth="580.0" style="-fx-background-color: yellow;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                                <TableColumn fx:id="firstNameColumn2" prefWidth="297.0" text="FIRST NAME" />
+                                                <TableColumn fx:id="secondNameColumn2" prefWidth="299.0" text="SECOND NAME" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </center>
+            <top>
+                <Label text=" Food Fave Center" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="37.0" />
+                    </font></Label>
+            </top>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </BorderPane>
+    </children>
+</AnchorPane>

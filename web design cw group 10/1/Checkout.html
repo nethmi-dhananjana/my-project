@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form - Sagar Developer</title>
+    <link rel="icon" type="Images/x-icon" href="Images/game-icon.ico">
+    <link rel="stylesheet" href="css/Checkout.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Checkout</h2>
+        <form id="form-cart">
+            <section class="order-sum">
+                <h4 class="form-title">Order summary</h4>
+                <p class="cart-checkout">Reference ID: <span id="ref-no">420000000000069</span></p>
+                <p class="cart-checkout">Amount of items in the cart : <span id="cart-count"></span></p>
+                <p class="cart-checkout">Subtotal : <span id="sub-total"></span></p>
+                <p class="cart-checkout">Delivery fee : <span id="deli-fee">$2.49</span></p>
+                <hr>
+                <p class="cart-checkout">Total Bill Amount : <span id="bill-amount">$0</span></p>
+            </section>
+        </form>
+    </div>
+    <div class="wrapper" style="margin-top: 1rem;">
+        <form id="form-payment" method="get">
+            <section class="payment-details">
+                <div class="input_group">
+                    <div class="input_box">
+                        <h4>Payment Details</h4>
+                        <input type="radio" name="pay" class="radio" id="credit" checked>
+                        <label for="credit"><span>
+                                <i class='bx bx-credit-card'></i><i class='bx bxl-mastercard'></i><i
+                                    class='bx bxl-visa'></i> Credit Card</span></label>
+                        <input type="radio" name="pay" class="radio" id="paypal">
+                        <label for="paypal"><span>
+                                <i class='bx bxl-paypal'></i>Paypal</span></label>
+                    </div>
+                </div>
+                <div class="input_group">
+                    <div class="input_box">
+                        <input type="tel" class="name" placeholder="Card Number 1111-2222-3333-4444" required
+                            id="cnumber">
+                        <i class='bx bx-credit-card icon'></i>
+                    </div>
+                </div>
+                <div class="input_group">
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Name On Card" required class="name" id="cname">
+                        <i class='bx bxs-user icon'></i>
+                    </div>
+                </div>
+                <div class="input_group">
+                    <div class="input_box">
+                        <input type="tel" class="name" placeholder="Card CVC 632" required id="cvc">
+                        <i class='bx bx-id-card icon'></i>
+                    </div>
+                </div>
+                <div class="input_group">
+                    <div class="input_box">
+                        <div class="input_box">
+                            <input type="text" placeholder="Exp Month" required class="name" id="expmonth">
+                            <i class='bx bx-calendar icon' aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Exp Year" required class="name" id="expyear">
+                        <i class='bx bxs-calendar icon' aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="input_group">
+                    <div class="input_box">
+                        <button type="submit" id="btn_payment">Confirm Payment</button>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+    <div class="wrapper" style="margin-top: 1rem;">
+        <h4 class="payment-title">Payment Details</h4>
+        <p class="cardpayment-details"></p>
+        <div id="card-details" style="display: inline-block;">Enter your payment details above</div>
+        <h4 class="delivery-title">Delivery Details</h4>
+        <p class="delivery-details"></p>
+        <div id="user-details" style="display: inline-block;">Please fill the form to complete order</div><a href="#"
+            id="form-link">Edit Details</a>
+
+        <form id="form-billing" style="display: none;" method="get">
+            <h4 class="form-title">Billing Address</h4>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="text" placeholder="First Name" required class="name" id="fname">
+                    <i class='bx bx-user icon'></i>
+                </div>
+                <div class="input_box">
+                    <input type="text" placeholder="Last Name" required class="name" id="lname">
+
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="tel" placeholder="Contact No." required class="name" id="contact">
+                    <i class='bx bx-phone-call icon'></i>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="email" placeholder="Email Address" required class="name" id="email">
+                    <i class='bx bx-envelope icon'></i>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="text" placeholder="Address" required class="name" id="address">
+                    <i class='bx bx-map icon'></i>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="text" placeholder="City" required class="name" id="city">
+                    <i class='bx bx-buildings icon'></i>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <select id="province" required class="name">
+                        <option value="" disabled selected style="display:none;">Province</option>
+                        <option value="western">Western Province</option>
+                        <option value="eastern">Eastern Province</option>
+                        <option value="southern">Southern Province</option>
+                        <option value="nothern">Northern Province</option>
+                        <option value="north-western">North Western Province</option>
+                        <option value="north-central">North Central Province</option>
+                        <option value="uva">Uva Province</option>
+                        <option value="sabaragamuwa">Sabaragamuwa Province</option>
+                        <option value="central">Central Province</option>
+                    </select>
+                    <i class='bx bxs-map-alt icon'></i>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="text" placeholder="Landmark(Optional)" class="name" id="landmark">
+                    <i class='bx bx-buildings icon'></i>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <h4 class="form-title">Date Of Birth</h4>
+                    <input type="text" placeholder="DD" required class="dob" id="day">
+                    <input type="text" placeholder="MM" required class="dob" id="month">
+                    <input type="text" placeholder="YYYY" required class="dob" id="year">
+                </div>
+                <div class="input_box">
+                    <h4 class="form-title">Gender</h4>
+                    <input type="radio" name="gender" class="radio" id="male" checked>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" class="radio" id="female">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <button type="submit" id="btn_change">SUBMIT CHANGES</button>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <button type="reset" id="btn_reset">RESET CHANGES</button>
+                </div>
+            </div>
+            <i class='bx bx-x' id="close-form"></i>
+        </form>
+        <div class="input_group">
+            <div class="input_box">
+                <button type="submit" id="btn_confirm">Confirm Purchase</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/Checkout.js"></script>
+    <footer class="footer">
+        <a href="HimaPageEditor.html">Page Editor</a>
+    </footer>
+</body>
+
+</html>

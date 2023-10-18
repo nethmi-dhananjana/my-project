@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="styleS3.css" rel="stylesheet">
+        <link href="navbar.css" rel="stylesheet">
+        <title>Quiz</title>
+        
+    </head>
+    <body>
+
+      <div class="nav">
+            <div class="product">
+              <img src="images/console.png" alt="" >
+              
+              <h1> GAMES HUB </h1>
+            </div>
+          <div class="items">	
+          <ul >
+            <li> <a href="../student2/home.html"> Home </a> </li>
+            <li> <a href ='../student2/comments.html'> Comments</a></li>
+            <li><a href='../Student1/BuyProducts.html'> Shop</a></li>
+            <li><a href='../Student3/abt.html' > Student Details</a></li>
+            <li><a href='../Student3/quiz.html' class="active"> Quiz</a></li>
+            <li><a href='../Student4/Sitemap.html'> Sitemap</a></li>
+            <li><a href='../Student4/gallery.html'> Gallery</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+        <div class="header">
+            <h1>Quiz</h1>
+        </div>
+
+        <div class="containerQuiz" id="quiz">
+          <h2></h2>
+            <div class="section">
+                
+              
+              <h2 id="question">Question is loading...</h2>
+
+              <hr>
+
+              <ul>
+                <li>
+                  <input type="radio" name="answer" id="a" class="answer" >
+                  <label for="a" id="a_text">Answer...</label>
+                </li>
+                <li>
+                  <input type="radio" name="answer" id="b" class="answer" >
+                  <label for="b" id="b_text">Answer...</label>
+                </li>
+                <li>
+                  <input type="radio" name="answer" id="c" class="answer" >
+                  <label for="c" id="c_text">Answer...</label>
+                </li>
+                <li>
+                  <input type="radio" name="answer" id="d" class="answer" >
+                  <label for="d" id="d_text">Answer...</label>
+                </li>
+              </ul>
+                <button id="submit">next</button>
+                <div id="current-question"></div>
+            </div>
+            <script src="script.js"></script>
+        </div>
+        <div class="pageEditor">
+            <a href="pageEditor3.html" style="color: #fff;">Page Editor</a>
+        </div>
+    </body>
+</html>
